@@ -4,7 +4,7 @@
 	<groupId>org.oxbow</groupId>
 	<artifactId>swing-bits-git</artifactId>
     <packaging>pom</packaging>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Oxbow Project Parent Project</name>
     <url>http://maven.apache.org</url>
 	
@@ -49,7 +49,7 @@
     <scm>
         <connection>scm:git:https://github.com/dbieri/oxbow.git</connection>
         <developerConnection>scm:git:https://github.com/dbieri/oxbow.git</developerConnection>
-        <tag>swingbits-${project.version}</tag>
+        <tag>swing-bits-git-1.0.0</tag>
     </scm>
 
     <distributionManagement>
