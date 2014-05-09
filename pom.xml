@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<groupId>org.oxbow</groupId>
+	<artifactId>swing-bits-git</artifactId>
+    <packaging>pom</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Oxbow Project Parent Project</name>
+    <url>http://maven.apache.org</url>
+	
+    <modules>
+        <module>swingbits</module>
+    </modules>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <!--There is a problem with the git commit-->
+                <!--http://maven.40175.n5.nabble.com/maven-release-plugin-oddity-no-git-commit-under-mvn-3-1-1-td5777947.html-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <!--<goals>install</goals>-->
+                    <!--<commitByProject>true</commitByProject>-->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+                <!--<dependencies>-->
+                <!--<dependency>-->
+                <!--<groupId>org.apache.maven.scm</groupId>-->
+                <!--<artifactId>maven-scm-provider-gitexe</artifactId>-->
+                <!--<version>1.9</version>-->
+                <!--</dependency>-->
+                <!--</dependencies>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <scm>
+        <connection>scm:git:https://github.com/dbieri/oxbow.git</connection>
+        <developerConnection>scm:git:https://github.com/dbieri/oxbow.git</developerConnection>
+        <tag>swingbits-${project.version}</tag>
+    </scm>
+
+    <distributionManagement>
+
+    </distributionManagement>
+</project>
